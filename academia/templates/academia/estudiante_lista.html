@@ -1,0 +1,11 @@
+<h1>Lista de Estudiantes</h1>
+<a href="{% url 'crear_estudiante' %}">Nuevo Estudiante</a>
+<ul>
+  {% for est in estudiantes %}
+    <li>
+      {{ est.nombre }} {{ est.apellido }} - {{ est.email }}
+      <a href="{% url 'editar_estudiante' est.id %}">Editar</a>
+      <a href="{% url 'eliminar_estudiante' est.id %}">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>
